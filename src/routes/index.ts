@@ -7,12 +7,12 @@ const router = express.Router();
 const defaultRoute = [
     {
         path: '/adminLogin',
-        router: adminRoute
+        route: adminRoute
     }
 ];
 
 defaultRoute.forEach(route => {
-    router.use(route.path, router.route);
+    router.use(route.path, route.route);
   });
   
   export default router;

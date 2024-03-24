@@ -1,7 +1,7 @@
 import express, { Request, Response, Application, NextFunction } from 'express';
 import ApiError from './utils/ApiError';
 import httpStatus  from 'http-status';
-import adminLogin from './routes/adminLogin.route';
+import adminLogin from './routes';
 const app: Application = express();
 
 // parse json request body
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
- app.use('/adminLogin', adminLogin);
+ app.use('/', adminLogin);
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     next(new ApiError(httpStatus.NOT_FOUND, 'Not found'));
