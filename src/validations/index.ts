@@ -1,0 +1,1 @@
+export * as adminValidation from './userAdmin.validation';
