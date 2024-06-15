@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { adminService } from "../services";
 import jwt from 'jsonwebtoken';
-import config from '../Config/config'
 const secret_key = "emisalkey123"
 
 export const adminLogin = async (req: Request, res: Response): Promise<any> => {
