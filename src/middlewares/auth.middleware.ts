@@ -6,15 +6,12 @@ export const authenticate  =  (req:Request, res:Response, next:NextFunction) =>{
 
     try{
         const authHeader = req.headers['authorization'];
-       // console.log(authHeader);
         if (!authHeader) {
             return res.status(401).send({ message: 'Access token is missing' });
         }
     
         const bearerToken = authHeader.split(' ');
-         const token = bearerToken[1];
-        // console.log("splitted token",token);
-        
+         const token = bearerToken[1];        
        const decoded = jwt.verify(token, secret_key, (err: any) => {
         if (err) {
             if (err.name === 'TokenExpiredError') {

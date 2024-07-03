@@ -8,12 +8,10 @@ export const adminLogin = async (req: Request, res: Response): Promise<any> => {
     try {
         const adminUserLogin = await adminService.adminUser(username, password); 
         if (adminUserLogin) {
-              const token = jwt.sign({ User: adminUserLogin }, secret_key, { expiresIn: '1min' });
-            res.status(200).send({ message: 'Login successful',token });
-            //  console.log(token)
-            // console.log(adminUserLogin);
+              const token = jwt.sign({ User: adminUserLogin }, secret_key, { expiresIn: '8h' });
+            res.status(200).send({ token });
         } else {
-            res.status(401).send({ message: "Invalid username or password" });
+            res.status(401).json({ message: "Invalid username or password" });
         } 
 
     } catch (err) {

@@ -8,9 +8,10 @@ import app from './app';
 // adminSeeder.js
 // Initial admin credentials
 const adminData = {
-  username: 'admin_Login',
-  password: 'password'
- 
+  username: 'emisal_admin',
+  password: 'password',
+  role:"admin"
+
 };
 
 // Function to seed admin data

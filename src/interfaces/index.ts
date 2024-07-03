@@ -1,1 +1,1 @@
-export {adminLogin} from './adminLogin.interface';
+export {adminLogin,signup} from './logins';
