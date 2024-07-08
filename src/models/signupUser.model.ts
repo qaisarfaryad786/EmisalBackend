@@ -6,6 +6,7 @@ const signupSchema = new Schema<Document & signup>({
   username: { type: String, required: true },
   password: { type: String, required: true },
   role: { type: String, required: true },
+  isActive: {type: Boolean , required:true},
   createdAt: { type: Date, default: Date.now } // Added datetime field
 });
 

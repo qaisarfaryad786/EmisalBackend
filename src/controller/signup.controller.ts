@@ -5,7 +5,7 @@ import { signup } from '../interfaces';
 export const signupUser = async (req: Request, res: Response) => {
   try {
     // Extract data from request body
-    const { name, username, password, role }: signup = req.body;
+    const { name, username, password, role, isActive }: signup = req.body;
 
     // Validate the required fields
     if (!name || !username || !password || !role) {
@@ -19,10 +19,10 @@ export const signupUser = async (req: Request, res: Response) => {
     }
 
     // Create a new user
-    await signupService.createUser({ name, username, password, role, createdAt: new Date() });
+    await signupService.createUser({ name, username, password, role, isActive, createdAt: new Date() });
 
     // Return success response
-    return res.status(201).json({ message: 'User created successfully',name,username,password,role });
+    return res.status(201).json({ message: 'User created successfully',name,username,password,role,isActive });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Internal server error' });

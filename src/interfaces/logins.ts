@@ -10,5 +10,6 @@ export interface signup {
     username:string;
     password:string;
     role:string;
+    isActive:boolean;
     createdAt?: Date;
 }

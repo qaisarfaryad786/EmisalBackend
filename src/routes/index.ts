@@ -14,7 +14,7 @@ const defaultRoute = [
         route: adminRoute
     },
     {
-        path: '/userDashboard',
+        path: '/getUsers',
         route:getUser
     },
     {
@@ -22,7 +22,7 @@ const defaultRoute = [
         route: signupRoute
     },
     {
-        path:'/signinUser',
+        path:'/login',
         route:signinRoute
 
     },
