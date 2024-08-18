@@ -4,7 +4,7 @@ import validate from '../middlewares/validate.middleware';
 import {adminValidation} from '../validations';
 const router = express.Router();
 
-router.post('/',validate(adminValidation.userAdmin),
+router.post('/',
  adminLoginController.adminLogin,
  );
 

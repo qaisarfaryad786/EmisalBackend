@@ -5,6 +5,7 @@ import getUser from './getUser.route';
 import signupRoute from './signupUser.route';
 import signinRoute from './userSignin.route';
 import logout from './adminlogout.route';
+import firSystem  from './firSystem.route';
 
 const router = express.Router();
 
@@ -13,10 +14,7 @@ const defaultRoute = [
         path: '/adminLogin',
         route: adminRoute
     },
-    {
-        path: '/getUsers',
-        route:getUser
-    },
+    
     {
         path:'/signupUser',
         route: signupRoute
@@ -29,6 +27,14 @@ const defaultRoute = [
     {
         path: '/logout',
         route:logout
+    },
+    {
+        path: '/getUsers',
+        route:getUser
+    },
+    {
+        path:'/firSystem/addNewFir',
+        route:firSystem
     }
 ];
 

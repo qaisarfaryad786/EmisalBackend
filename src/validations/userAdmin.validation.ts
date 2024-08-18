@@ -6,3 +6,4 @@ export const userAdmin = {
         password: Joi.string().required()
     })
 };
+
